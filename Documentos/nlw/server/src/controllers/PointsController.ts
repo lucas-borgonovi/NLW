@@ -77,7 +77,9 @@ class PointsController {
             };
         })
     
-        await trx('point-items').insert(pointItems);
+        await trx('point-items').insert(pointItems).catch(err => {
+            throw new Error(err);
+          });
 
         //no final de todos os trx tem  rodar esse comando, pois só ai ele vai inserir 
         //na base de dados

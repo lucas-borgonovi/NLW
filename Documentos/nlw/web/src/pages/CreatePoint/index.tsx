@@ -146,12 +146,13 @@ const CreatePoint = () =>{
             name,
             email,
             whatsapp,
-            uf,
-            city,
             latitude,
             longitude,
+            city,
+            uf,
             items
         }
+
        await api.post('points',data);
 
        alert('Ponto de coleta criado');
